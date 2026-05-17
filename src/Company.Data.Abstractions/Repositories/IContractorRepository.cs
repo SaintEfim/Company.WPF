@@ -3,5 +3,5 @@ using Company.Data.Repositories.Base;
 
 namespace Company.Data.Repositories;
 
-public interface IContractorRepository : IRepository<ContractorModel>;
+public interface IContractorRepository : IRepository<ContractorEntity>;
 

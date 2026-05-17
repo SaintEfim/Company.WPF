@@ -4,22 +4,28 @@ using Company.Data.Models.Base;
 namespace Company.Data.Repositories.Base;
 
 public interface IRepository<T>
-    where T : ModelBase
+    where T : class, IEntity
 {
-    T Get(
-        int id);
+    Task<T> GetOneById(
+        Guid id,
+        CancellationToken cancellationToken = default);
 
-    IEnumerable<T> GetAll();
+    Task<IEnumerable<T>> Get(
+        CancellationToken cancellationToken = default);
 
-    IEnumerable<T> Find(
-        Expression<Func<T, bool>> predicate);
+    Task<IEnumerable<T>> Find(
+        Expression<Func<T, bool>> predicate,
+        CancellationToken cancellationToken = default);
 
-    void Create(
-        T entity);
+    Task<T> Create(
+        T entity,
+        CancellationToken cancellationToken = default);
 
-    void Update(
-        T entity);
+    Task<T> Update(
+        T entity,
+        CancellationToken cancellationToken = default);
 
-    void Delete(
-        T entity);
+    Task<T> Delete(
+        Guid id,
+        CancellationToken cancellationToken = default);
 }
