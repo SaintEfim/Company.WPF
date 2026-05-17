@@ -15,12 +15,12 @@ public class OrderMap : ClassMapBase<OrderEntity>
             .Not
             .Nullable();
 
-        References(x => x.EmployeeModel)
+        References(x => x.Employee)
             .Column("EmployeeId")
             .Not
             .Nullable();
 
-        References(x => x.ContractorModel)
+        References(x => x.Contractor)
             .Column("ContractorId")
             .Not
             .Nullable();

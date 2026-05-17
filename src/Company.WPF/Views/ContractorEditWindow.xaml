@@ -1,0 +1,34 @@
+﻿<Window x:Class="Company.WPF.Views.ContractorEditWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Контрагент" Height="250" Width="400"
+        WindowStartupLocation="CenterOwner">
+  <Grid Margin="10">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/><RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/><RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto"/><ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <TextBlock Text="Наименование:" Grid.Row="0" Grid.Column="0" Margin="0,5"/>
+    <TextBox Text="{Binding Name}" Grid.Row="0" Grid.Column="1" Margin="5"/>
+
+    <TextBlock Text="ИНН:" Grid.Row="1" Grid.Column="0" Margin="0,5"/>
+    <TextBox Text="{Binding Inn}" Grid.Row="1" Grid.Column="1" Margin="5"/>
+
+    <TextBlock Text="Куратор:" Grid.Row="2" Grid.Column="0" Margin="0,5"/>
+    <ComboBox Grid.Row="2" Grid.Column="1" Margin="5"
+              ItemsSource="{Binding AvailableEmployees}"
+              SelectedItem="{Binding SelectedCurator}"
+              DisplayMemberPath="FullName"/>
+
+    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Row="4" Grid.ColumnSpan="2" Grid.Column="0"
+                Margin="0,10">
+      <Button Content="Сохранить" Command="{Binding SaveCommand}" Width="75" Margin="5"/>
+      <Button Content="Отмена" Command="{Binding CancelCommand}" Width="75" Margin="5"/>
+    </StackPanel>
+  </Grid>
+</Window>

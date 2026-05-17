@@ -16,7 +16,7 @@ public class NhibernateHelper
             .Database(MySQLConfiguration.Standard.ConnectionString(cs => cs.Server("localhost")
                 .Database("companydb")
                 .Username("root")
-                .Password("123456 ")))
+                .Password("123456")))
             .Mappings(m => m.FluentMappings.AddFromAssemblyOf<EmployeeMap>())
             .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(false, true))
             .BuildSessionFactory();

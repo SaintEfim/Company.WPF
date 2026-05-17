@@ -2,7 +2,7 @@
 
 namespace Company.Domain.Models;
 
-public abstract class ContractorModel : ModelBase
+public class ContractorModel : ModelBase
 {
     public string Name { get; set; } = string.Empty;
 

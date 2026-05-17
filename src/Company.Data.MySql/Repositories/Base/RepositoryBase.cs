@@ -34,8 +34,17 @@ public abstract class RepositoryBase<T> : IRepository<T>
     public async Task<IEnumerable<T>> Get(
         CancellationToken cancellationToken = default)
     {
-        return await _session.Query<T>()
-            .ToListAsync(cancellationToken: cancellationToken);
+        var query = _session.Query<T>();
+
+        var fillRelatedRecords = FillRelatedRecords(query);
+
+        return await fillRelatedRecords.ToListAsync(cancellationToken: cancellationToken);
+    }
+
+    protected virtual IQueryable<T>? FillRelatedRecords(
+        IQueryable<T>? query)
+    {
+        return query;
     }
 
     public async Task<IEnumerable<T>> Find(
@@ -54,9 +63,9 @@ public abstract class RepositoryBase<T> : IRepository<T>
         using var transaction = _session.BeginTransaction();
         try
         {
-            var createdItem = (T) await _session.SaveAsync(entity, cancellationToken);
+            await _session.SaveAsync(entity, cancellationToken);
             await transaction.CommitAsync(cancellationToken);
-            return createdItem;
+            return entity;
         }
         catch
         {
@@ -72,8 +81,10 @@ public abstract class RepositoryBase<T> : IRepository<T>
         using var transaction = _session.BeginTransaction();
         try
         {
-            await _session.UpdateAsync(entity, cancellationToken);
+            await _session.MergeAsync(entity, cancellationToken);
+
             await transaction.CommitAsync(cancellationToken);
+
             return await _session.GetAsync<T>(entity.Id, cancellationToken);
         }
         catch

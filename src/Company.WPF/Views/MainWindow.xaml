@@ -1,0 +1,67 @@
+﻿<Window x:Class="Company.WPF.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Управление компанией" Height="600" Width="900">
+    <TabControl>
+        <!-- Вкладка Сотрудники -->
+        <TabItem Header="Сотрудники">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="5">
+                    <Button Content="Добавить" Command="{Binding AddEmployeeCommand}"/>
+                    <Button Content="Изменить" Command="{Binding EditEmployeeCommand}"
+                            CommandParameter="{Binding SelectedItem, ElementName=EmpGrid}"/>
+                    <Button Content="Удалить" Command="{Binding DeleteEmployeeCommand}"
+                            CommandParameter="{Binding SelectedItem, ElementName=EmpGrid}"/>
+                </StackPanel>
+                <DataGrid x:Name="EmpGrid" ItemsSource="{Binding Employees}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ФИО" Binding="{Binding FullName}"/>
+                        <DataGridTextColumn Header="Должность" Binding="{Binding Position}"/>
+                        <DataGridTextColumn Header="Дата рождения" Binding="{Binding DateOfBirth, StringFormat=d}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </TabItem>
+
+        <!-- Вкладка Контрагенты -->
+        <TabItem Header="Контрагенты">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="5">
+                    <Button Content="Добавить" Command="{Binding AddContractorCommand}"/>
+                    <Button Content="Изменить" Command="{Binding EditContractorCommand}"
+                            CommandParameter="{Binding SelectedItem, ElementName=CpGrid}"/>
+                    <Button Content="Удалить" Command="{Binding DeleteContractorCommand}"
+                            CommandParameter="{Binding SelectedItem, ElementName=CpGrid}"/>
+                </StackPanel>
+                <DataGrid x:Name="CpGrid" ItemsSource="{Binding Contractors}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Наименование" Binding="{Binding Name}"/>
+                        <DataGridTextColumn Header="ИНН" Binding="{Binding INN}"/>
+                        <DataGridTextColumn Header="Куратор" Binding="{Binding Curator.FullName}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </TabItem>
+
+        <!-- Вкладка Заказы -->
+        <TabItem Header="Заказы">
+            <DockPanel>
+                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="5">
+                    <Button Content="Добавить" Command="{Binding AddOrderCommand}"/>
+                    <Button Content="Изменить" Command="{Binding EditOrderCommand}"
+                            CommandParameter="{Binding SelectedItem, ElementName=OrdGrid}"/>
+                    <Button Content="Удалить" Command="{Binding DeleteOrderCommand}"
+                            CommandParameter="{Binding SelectedItem, ElementName=OrdGrid}"/>
+                </StackPanel>
+                <DataGrid x:Name="OrdGrid" ItemsSource="{Binding Orders}" AutoGenerateColumns="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat=d}"/>
+                        <DataGridTextColumn Header="Сумма" Binding="{Binding Amount, StringFormat=N2}"/>
+                        <DataGridTextColumn Header="Сотрудник" Binding="{Binding Employee.FullName}"/>
+                        <DataGridTextColumn Header="Контрагент" Binding="{Binding Contractor.Name}"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </DockPanel>
+        </TabItem>
+    </TabControl>
+</Window>
