@@ -5,12 +5,12 @@ using NHibernate;
 
 namespace Company.Data.MySql.Repositories.Base;
 
-public abstract class RepositoryBase<T> : IRepositoryBase<T>
+public abstract class Repository<T> : IRepository<T>
     where T : ModelBase
 {
     private readonly ISession _session;
 
-    protected RepositoryBase(
+    protected Repository(
         ISession session)
     {
         _session = session;

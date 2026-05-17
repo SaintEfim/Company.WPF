@@ -6,7 +6,7 @@ using NHibernate;
 namespace Company.Data.MySql.Repositories;
 
 public class EmployeeRepository
-    : RepositoryBase<EmployeeModel>,
+    : Repository<EmployeeModel>,
         IEmployeeRepository
 {
     public EmployeeRepository(

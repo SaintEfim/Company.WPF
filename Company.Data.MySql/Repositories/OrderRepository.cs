@@ -6,7 +6,7 @@ using NHibernate;
 namespace Company.Data.MySql.Repositories;
 
 public class OrderRepository
-    : RepositoryBase<OrderModel>,
+    : Repository<OrderModel>,
         IOrderRepository
 {
     public OrderRepository(

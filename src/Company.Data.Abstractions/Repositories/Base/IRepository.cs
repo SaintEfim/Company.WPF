@@ -3,7 +3,7 @@ using Company.Data.Models.Base;
 
 namespace Company.Data.Repositories.Base;
 
-public interface IRepositoryBase<T>
+public interface IRepository<T>
     where T : ModelBase
 {
     T Get(

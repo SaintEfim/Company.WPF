@@ -3,4 +3,4 @@ using Company.Data.Repositories.Base;
 
 namespace Company.Data.Repositories;
 
-public interface IEmployeeRepository : IRepositoryBase<EmployeeModel>;
+public interface IEmployeeRepository : IRepository<EmployeeModel>;

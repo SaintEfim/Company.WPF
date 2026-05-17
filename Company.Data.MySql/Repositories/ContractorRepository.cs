@@ -6,7 +6,7 @@ using NHibernate;
 namespace Company.Data.MySql.Repositories;
 
 public class ContractorRepository
-    : RepositoryBase<ContractorModel>,
+    : Repository<ContractorModel>,
         IContractorRepository
 {
     public ContractorRepository(
