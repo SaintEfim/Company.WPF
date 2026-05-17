@@ -7,9 +7,23 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Data.Abstractions", "src\Company.Data.Abstractions\Company.Data.Abstractions.csproj", "{086F1E14-C37F-4763-B05D-E04AEDBA6C8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Data.MySql", "Company.Data.MySql\Company.Data.MySql.csproj", "{4C483692-51C9-417B-97FA-ACB81EFA724A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{086F1E14-C37F-4763-B05D-E04AEDBA6C8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{086F1E14-C37F-4763-B05D-E04AEDBA6C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{086F1E14-C37F-4763-B05D-E04AEDBA6C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{086F1E14-C37F-4763-B05D-E04AEDBA6C8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C483692-51C9-417B-97FA-ACB81EFA724A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C483692-51C9-417B-97FA-ACB81EFA724A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C483692-51C9-417B-97FA-ACB81EFA724A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C483692-51C9-417B-97FA-ACB81EFA724A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
