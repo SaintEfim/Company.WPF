@@ -101,7 +101,6 @@ public class MainViewModel : BaseViewModel
         EditOrderCommand = new AsyncRelayCommand(p => OpenOrderEdit(p as OrderModel), p => p is OrderModel);
         DeleteOrderCommand = new AsyncRelayCommand(p => DeleteOrder(p as OrderModel), p => p is OrderModel);
 
-        // Асинхронная загрузка данных
         _ = LoadDataAsync();
     }
 
@@ -158,7 +157,7 @@ public class MainViewModel : BaseViewModel
         var window = new ContractorEditWindow(vm);
         if (_windowService.ShowDialog(vm, window) == true)
         {
-            await ReloadContractors(); // ← было ReloadEmployees
+            await ReloadContractors();
         }
     }
 
@@ -196,7 +195,7 @@ public class MainViewModel : BaseViewModel
         var window = new OrderEditWindow(vm);
         if (_windowService.ShowDialog(vm, window) == true)
         {
-            await ReloadOrders(); // ← было ReloadEmployees
+            await ReloadOrders();
         }
     }
 
