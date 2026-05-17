@@ -9,11 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Files", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Data.Abstractions", "src\Company.Data.Abstractions\Company.Data.Abstractions.csproj", "{086F1E14-C37F-4763-B05D-E04AEDBA6C8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Data.MySql", "src/Company.Data.MySql\Company.Data.MySql.csproj", "{4C483692-51C9-417B-97FA-ACB81EFA724A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Data.MySql", "src\Company.Data.MySql\Company.Data.MySql.csproj", "{4C483692-51C9-417B-97FA-ACB81EFA724A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Domain", "src\Company.Domain\Company.Domain.csproj", "{86E88778-86A6-4EB5-8EC7-C2BB3DF86FA9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.Domain.Abstractions", "src\Company.Domain.Abstractions\Company.Domain.Abstractions.csproj", "{33C0A796-1074-4A3C-94F4-461642B03593}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Company.WPF", "src\Company.WPF\Company.WPF.csproj", "{7DAA16C7-D787-4892-A963-A1D901971482}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,5 +39,9 @@ Global
 		{33C0A796-1074-4A3C-94F4-461642B03593}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33C0A796-1074-4A3C-94F4-461642B03593}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33C0A796-1074-4A3C-94F4-461642B03593}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DAA16C7-D787-4892-A963-A1D901971482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DAA16C7-D787-4892-A963-A1D901971482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DAA16C7-D787-4892-A963-A1D901971482}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DAA16C7-D787-4892-A963-A1D901971482}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

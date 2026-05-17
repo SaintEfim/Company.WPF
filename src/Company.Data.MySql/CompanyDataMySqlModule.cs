@@ -12,6 +12,10 @@ public class CompanyDataMySqlModule : Module
             .AsClosedTypesOf(typeof(IRepository<>))
             .AsImplementedInterfaces();
 
+        builder.RegisterType<NhibernateHelper>()
+            .AsSelf()
+            .SingleInstance();
+
         builder.Register(c => c.Resolve<NhibernateHelper>()
                 .GetSessionFactory()
                 .OpenSession())

@@ -8,7 +8,7 @@ public class OrderModel : ModelBase
 
     public decimal Amount { get; set; }
 
-    public EmployeeModel? EmployeeModel { get; set; } = null!;
+    public EmployeeModel Employee { get; set; } = null!;
 
-    public ContractorModel? ContractorModel { get; set; } = null!;
+    public ContractorModel Contractor { get; set; } = null!;
 }

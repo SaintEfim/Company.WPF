@@ -8,7 +8,7 @@ public class OrderEntity : EntityBase
 
     public virtual decimal Amount { get; set; }
 
-    public virtual EmployeeEntity? EmployeeModel { get; set; } = null!;
+    public virtual EmployeeEntity Employee { get; set; } = null!;
 
-    public virtual ContractorEntity? ContractorModel { get; set; } = null!;
+    public virtual ContractorEntity Contractor { get; set; } = null!;
 }
