@@ -5,6 +5,7 @@ using Company.Domain;
 using Company.WPF.Services;
 using Company.WPF.ViewModels;
 using Company.WPF.Views;
+using Microsoft.Extensions.Configuration;
 
 namespace Company.WPF;
 
@@ -23,6 +24,7 @@ public partial class App
         var builder = new ContainerBuilder();
 
         ConfigureServices(builder);
+        RegisterConfiguration(builder);
         _container = builder.Build();
 
         var mainWindow = _container.Resolve<MainWindow>();
@@ -84,5 +86,18 @@ public partial class App
         builder.RegisterType<ContractorEditWindow>()
             .AsSelf()
             .InstancePerDependency();
+    }
+
+    private static void RegisterConfiguration(
+        ContainerBuilder builder)
+    {
+        var configuration = new ConfigurationBuilder().SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+            .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            .Build();
+
+        // 2. Регистрируем экземпляр
+        builder.RegisterInstance(configuration)
+            .As<IConfiguration>()
+            .SingleInstance();
     }
 }

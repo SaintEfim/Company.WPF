@@ -41,7 +41,7 @@ public class OrderEditViewModel : BaseViewModel
         }
     }
 
-    private EmployeeModel _selectedEmployee;
+    private EmployeeModel _selectedEmployee = null!;
 
     public EmployeeModel SelectedEmployee
     {
@@ -53,7 +53,7 @@ public class OrderEditViewModel : BaseViewModel
         }
     }
 
-    private ContractorModel _selectedContractor;
+    private ContractorModel _selectedContractor = null!;
 
     public ContractorModel SelectedContractor
     {
@@ -91,7 +91,6 @@ public class OrderEditViewModel : BaseViewModel
 
         Id = order?.Id ?? Guid.Empty;
 
-        // async загрузка данных отдельно
         _ = InitializeAsync(employeeProvider, contractorProvider, order);
     }
 

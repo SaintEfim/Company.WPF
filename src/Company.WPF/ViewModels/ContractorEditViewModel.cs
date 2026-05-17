@@ -43,9 +43,9 @@ public class ContractorEditViewModel : BaseViewModel
         }
     }
 
-    private EmployeeModel? _selectedCurator;
+    private EmployeeModel _selectedCurator = null!;
 
-    public EmployeeModel? SelectedCurator
+    public EmployeeModel SelectedCurator
     {
         get => _selectedCurator;
         set
@@ -68,7 +68,7 @@ public class ContractorEditViewModel : BaseViewModel
         _contractorManager = contractorManager;
         _originalContractor = contractor;
 
-        AvailableEmployees = new ObservableCollection<EmployeeModel>();
+        AvailableEmployees = [];
 
         _saveCommand = new AsyncRelayCommand(_ => SaveAsync(), _ => CanSave());
         CancelCommand = new RelayCommand(_ => CloseWindow(false));
@@ -94,7 +94,7 @@ public class ContractorEditViewModel : BaseViewModel
 
         if (contractor is not null)
         {
-            SelectedCurator = AvailableEmployees.FirstOrDefault(e => e.Id == contractor.Curator?.Id);
+            SelectedCurator = AvailableEmployees.Single(e => e.Id == contractor.Curator.Id);
         }
     }
 

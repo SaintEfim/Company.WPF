@@ -12,12 +12,20 @@
       <PackageReference Include="Autofac" Version="8.4.0" />
       <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
       <PackageReference Include="AutoMapper" Version="14.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.0.0" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\Company.Domain.Abstractions\Company.Domain.Abstractions.csproj" />
       <ProjectReference Include="..\Company.Domain\Company.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="appsettings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Управление компанией" Height="600" Width="900">
     <TabControl>
-        <!-- Вкладка Сотрудники -->
         <TabItem Header="Сотрудники">
             <DockPanel>
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="5">
@@ -22,8 +21,6 @@
                 </DataGrid>
             </DockPanel>
         </TabItem>
-
-        <!-- Вкладка Контрагенты -->
         <TabItem Header="Контрагенты">
             <DockPanel>
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="5">
@@ -42,8 +39,6 @@
                 </DataGrid>
             </DockPanel>
         </TabItem>
-
-        <!-- Вкладка Заказы -->
         <TabItem Header="Заказы">
             <DockPanel>
                 <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="5">

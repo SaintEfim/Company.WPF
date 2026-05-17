@@ -8,5 +8,5 @@ public class ContractorModel : ModelBase
 
     public string INN { get; set; }  = string.Empty;
 
-    public EmployeeModel? Curator { get; set; } = null!;
+    public EmployeeModel Curator { get; set; } = null!;
 }

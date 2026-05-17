@@ -21,7 +21,7 @@ public class MainViewModel : BaseViewModel
     private readonly IOrderProvider _orderProvider;
     private readonly IWindowService _windowService;
 
-    private ObservableCollection<EmployeeModel> _employees = new();
+    private ObservableCollection<EmployeeModel> _employees = [];
 
     public ObservableCollection<EmployeeModel> Employees
     {
@@ -33,7 +33,7 @@ public class MainViewModel : BaseViewModel
         }
     }
 
-    private ObservableCollection<ContractorModel> _contractors = new();
+    private ObservableCollection<ContractorModel> _contractors = [];
 
     public ObservableCollection<ContractorModel> Contractors
     {
@@ -45,7 +45,7 @@ public class MainViewModel : BaseViewModel
         }
     }
 
-    private ObservableCollection<OrderModel> _orders = new();
+    private ObservableCollection<OrderModel> _orders = [];
 
     public ObservableCollection<OrderModel> Orders
     {
