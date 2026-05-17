@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows;
 using System.Windows.Input;
 using Company.Domain.Models;
 using Company.Domain.Services.Contractor;
@@ -128,8 +129,16 @@ public class MainViewModel : BaseViewModel
     {
         if (employee is null) return;
 
-        await _employeeManager.Delete(employee.Id);
-        await ReloadEmployees();
+        try
+        {
+            await _employeeManager.Delete(employee.Id);
+            await ReloadEmployees();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Не удалось удалить сотрудника.\n{ex.Message}", "Ошибка", MessageBoxButton.OK,
+                MessageBoxImage.Error);
+        }
     }
 
     private async Task ReloadEmployees()
@@ -158,8 +167,16 @@ public class MainViewModel : BaseViewModel
     {
         if (contractor is null) return;
 
-        await _contractorManager.Delete(contractor.Id);
-        await ReloadContractors();
+        try
+        {
+            await _contractorManager.Delete(contractor.Id);
+            await ReloadContractors();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Не удалось удалить контрагента.\n{ex.Message}", "Ошибка", MessageBoxButton.OK,
+                MessageBoxImage.Error);
+        }
     }
 
     private async Task ReloadContractors()
@@ -188,8 +205,16 @@ public class MainViewModel : BaseViewModel
     {
         if (order is null) return;
 
-        await _orderManager.Delete(order.Id);
-        await ReloadOrders();
+        try
+        {
+            await _orderManager.Delete(order.Id);
+            await ReloadOrders();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Не удалось удалить заказ.\n{ex.Message}", "Ошибка", MessageBoxButton.OK,
+                MessageBoxImage.Error);
+        }
     }
 
     private async Task ReloadOrders()
