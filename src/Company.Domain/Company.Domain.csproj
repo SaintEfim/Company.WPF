@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac" Version="8.4.0" />
+      <PackageReference Include="AutoMapper" Version="14.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Company.Data.Abstractions\Company.Data.Abstractions.csproj" />
+      <ProjectReference Include="..\Company.Data.MySql\Company.Data.MySql.csproj" />
+      <ProjectReference Include="..\Company.Domain.Abstractions\Company.Domain.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

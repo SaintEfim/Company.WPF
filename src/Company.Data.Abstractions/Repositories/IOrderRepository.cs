@@ -3,4 +3,4 @@ using Company.Data.Repositories.Base;
 
 namespace Company.Data.Repositories;
 
-public interface IOrderRepository : IRepository<OrderModel>;
+public interface IOrderRepository : IRepository<OrderEntity>;
